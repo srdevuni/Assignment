@@ -1,0 +1,20 @@
+<template>
+    <article class="slds-card">
+    <template if:true={data}>
+    <B>Financial Services Account Listing</B>
+    <lightning-input type="search" placeholder="Search Account" onkeyup={handleKeyChange} class="slds-m-bottom_small" label="Search Account" value={accountName}></lightning-input>    
+    <div style="height: 300px;">
+           <lightning-datatable data={data} columns={columns} key-field="AccId" 
+           default-sort-direction={defaultSortDirection}
+           sorted-direction={sortDirection}
+           sorted-by={sortedBy}
+           onsort={onHandleSort}
+           draft-values={draftValues}
+           onsave={handleSave}
+           onrowaction={handleRowAction}
+           >
+            </lightning-datatable>
+    </div>
+</template>
+</article>
+</template>
